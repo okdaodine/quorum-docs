@@ -11,7 +11,7 @@ description: 描述一下这个页面的概要
 
 Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur. `quorum` 不错
 
-这是 `中文` 的 code
+这是 `中文` 的 code。推送一下代码会自动 build 吗？
 
 
 ### 安装依赖
