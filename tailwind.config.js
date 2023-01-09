@@ -16,7 +16,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
-        display: ['Lexend', ...defaultTheme.fontFamily.sans],
+        display: ['Lexend', 'Source Han Sans SC', 'Source Han Sans', ...defaultTheme.fontFamily.sans],
       },
       maxWidth: {
         '8xl': '88rem',
