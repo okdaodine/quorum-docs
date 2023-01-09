@@ -10,12 +10,22 @@ import '@/styles/tailwind.css'
 const navigationCN = [
   {
     expand: true,
+    title: '前言',
+    links: [{ title: '快速开始', href: '/' }],
+  },
+  {
+    expand: true,
     title: '节点',
     links: [{ title: '运行全节点', href: '/docs/run-fullnode' }],
   },
   {
     title: '参与 quorum 开发',
     links: [{ title: '源码编译 quorum', href: '/docs/build-quorum' }],
+  },
+  {
+    expand: true,
+    title: '内容',
+    links: [{ title: '格式说明和例子', href: '/docs/data-format-and-examples' }],
   },
 ];
 
