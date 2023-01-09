@@ -150,7 +150,7 @@ SDK.chain.Trx.create({
 // 上链之后的数据
 {
   "Data": {
-    "type": "Create",
+    "type": "Delete",
     "object" : {
       "type": "Note",
       "id": "1",
@@ -332,7 +332,7 @@ import SDK from 'rum-sdk-nodejs';
 const group = SDK.cache.Group.add('rum://...');
 SDK.chain.Trx.create({
   data: {
-    type: "Delete",
+    type: "Create",
     object : {
       type: "Note",
       id: "2",
