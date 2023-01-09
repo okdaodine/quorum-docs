@@ -68,6 +68,11 @@ export function Search() {
             initialScrollY={window.scrollY}
             onClose={onClose}
             hitComponent={Hit}
+            searchParameters={{
+              numericFilters: [
+                'weight.level < 100'
+              ]
+            }}
             navigator={{
               navigate({ itemUrl }) {
                 Router.push(itemUrl)
