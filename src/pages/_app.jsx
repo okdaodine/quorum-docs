@@ -10,32 +10,8 @@ import '@/styles/tailwind.css'
 const navigationCN = [
   {
     expand: true,
-    title: '介绍',
-    links: [
-      { title: '快速开始', href: '/' },
-      { title: '安装向导', href: '/docs/installation' },
-    ],
-  },
-  {
-    expand: true,
     title: '节点',
     links: [{ title: '运行全节点', href: '/docs/run-fullnode' }],
-  },
-  {
-    expand: true,
-    title: '种子网络',
-    links: [
-      { title: '创建种子网络', href: '/docs/create-group' },
-      { title: '获取种子网络', href: '/docs/get-group' },
-      { title: '加入种子网络', href: '/docs/join-group' },
-    ],
-  },
-  {
-    title: '内容',
-    links: [
-      { title: '提交内容', href: '/docs/submit-trx' },
-      { title: '获取内容', href: '/docs/get-trx' },
-    ],
   },
   {
     title: '参与 quorum 开发',
@@ -46,35 +22,11 @@ const navigationCN = [
 const navigationEN = [
   {
     expand: true,
-    title: '介绍（en）',
-    links: [
-      { title: '快速开始（en）', href: '/docs/en' },
-      { title: '安装向导（en）', href: '/docs/en/installation' },
-    ],
-  },
-  {
-    expand: true,
     title: '节点（en）',
     links: [{ title: '运行全节点（en）', href: '/docs/en/run-fullnode' }],
   },
   {
-    expand: true,
-    title: '种子网络（en）',
-    links: [
-      { title: '创建种子网络（en）', href: '/docs/en/create-group' },
-      { title: '获取种子网络（en）', href: '/docs/en/get-group' },
-      { title: '加入种子网络（en）', href: '/docs/en/join-group' },
-    ],
-  },
-  {
-    title: '内容（en）',
-    links: [
-      { title: '提交内容（en）', href: '/docs/en/submit-trx' },
-      { title: '获取内容（en）', href: '/docs/en/get-trx' },
-    ],
-  },
-  {
-    title: '参与 quorum 开发',
+    title: '参与 quorum 开发（en）',
     links: [{ title: '源码编译 quorum（en）', href: '/docs/en/build-quorum' }],
   },
 ];
