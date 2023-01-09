@@ -21,7 +21,7 @@ export function Fence({ children, language }) {
 
   React.useEffect(() => {
     const handleExpand = () => {
-      if (codeRef.current && (codeRef.current.scrollHeight > codeRef.current.clientHeight || codeRef.current.clientHeight > 240)) {
+      if (codeRef.current && (codeRef.current.scrollHeight > codeRef.current.clientHeight || codeRef.current.clientHeight > 480)) {
         setCanExpand(true);
       } else {
         setCanExpand(false);

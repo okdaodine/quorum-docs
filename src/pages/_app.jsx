@@ -32,6 +32,11 @@ const navigationCN = [
 const navigationEN = [
   {
     expand: true,
+    title: '前言（en）',
+    links: [{ title: '快速开始（en）', href: '/' }],
+  },
+  {
+    expand: true,
     title: '节点（en）',
     links: [{ title: '运行全节点（en）', href: '/docs/en/run-fullnode' }],
   },

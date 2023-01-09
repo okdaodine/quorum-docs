@@ -22,7 +22,7 @@
 code.fold {
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 10;
+  -webkit-line-clamp: 20;
   -webkit-box-orient: vertical;
   display: -webkit-box;
 }
