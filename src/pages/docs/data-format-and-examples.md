@@ -58,7 +58,7 @@ SDK.chain.Trx.create({
 
 ```
 
-参考：[ActivityPub#Create](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create)
+参考：[ActivityPub#Create](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create), [ActivityPub#Note](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-note)
 
 ## 创建带图片的文章
 
@@ -120,7 +120,7 @@ SDK.chain.Trx.create({
 
 ```
 
-参考：[ActivityPub#Create](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create), [ActivityPub#Image](https://www.w3.org/TR/activitystreams-vocabulary/#ex80-jsonld)
+参考：[ActivityPub#Create](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create), [ActivityPub#Note](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-note), [ActivityPub#Image](https://www.w3.org/TR/activitystreams-vocabulary/#ex80-jsonld)
 
 ## 删除文章
 
