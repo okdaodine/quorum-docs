@@ -24,7 +24,10 @@ const navigationCN = [
   {
     expand: true,
     title: '参与 quorum 开发',
-    links: [{ title: '源码编译 quorum', href: '/docs/build-quorum' }],
+    links: [
+      { title: '源码编译 quorum', href: '/docs/build-quorum' },
+      { title: '编写 SDK', href: '/docs/build-sdk' }
+    ],
   },
   {
     expand: true,
