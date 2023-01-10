@@ -53,7 +53,7 @@ function Header({ navigation }) {
       <div className="relative flex basis-0 justify-end space-x-6 sm:space-x-8 md:flex-grow">
         <LangSelector className="relative z-10" />
         <ThemeSelector className="relative z-10" />
-        <Link href="https://github.com">
+        <Link href="https://github.com/okdaodine/quorum-docs">
           <a className="group">
             <span className="sr-only">GitHub</span>
             <svg
