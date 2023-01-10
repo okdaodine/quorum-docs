@@ -35,10 +35,10 @@ SDK.chain.Trx.create({
 });
 
 // get data from chain
-const result = await SDK.chain.Content.list({
+const contents = await SDK.chain.Content.list({
   groupId: group.groupId,
 });
-console.log(result);
+console.log(contents);
 // [{
 //   "Data": {
 //     "type": "Create",
