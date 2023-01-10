@@ -19,6 +19,7 @@ const navigationCN = [
     links: [{ title: '运行全节点', href: '/docs/run-fullnode' }],
   },
   {
+    expand: true,
     title: '参与 quorum 开发',
     links: [{ title: '源码编译 quorum', href: '/docs/build-quorum' }],
   },

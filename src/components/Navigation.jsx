@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
-import { FiChevronDown, FiChevronRight } from 'react-icons/fi';
+import { FiChevronDown, FiChevronRight, FiExternalLink } from 'react-icons/fi';
 
 export function Navigation({ navigation, className }) {
   const _expandMap = {};
@@ -68,6 +68,12 @@ export function Navigation({ navigation, className }) {
           </li>
         ))}
       </ul>
+      <a
+        className='mt-5 font-display font-medium text-[#0D1117] dark:text-white flex items-center cursor-pointer select-none relative'
+        href="https://docs.rumsystem.net/rest-api/" target="_blank" rel="noopener noreferrer">
+        REST API
+        <FiExternalLink className="ml-2 text-orange-500" />
+      </a>
     </nav>
   )
 }
