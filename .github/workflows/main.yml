@@ -43,3 +43,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: out
           cname: docs.rumsystem.net
+
+      - name: Wait for gh deploy
+        run: sleep 30
+
+      - name: Run Docsearch Scraper
+        run: docker run -e "APPLICATION_ID=9RDLHPJLD7" -e "API_KEY=${{ secrets.API_KEY }}" -e "CONFIG=$(cat docsearch-config.json | jq -r tostring)" algolia/docsearch-scraper

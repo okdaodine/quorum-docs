@@ -1,0 +1,15 @@
+{
+  "index_name": "quorum",
+  "start_urls": [
+    "https://docs.rumsystem.net"
+  ],
+  "selectors": {
+    "lvl0": "article header p",
+    "lvl1": "article header h1",
+    "lvl2": "article h2",
+    "lvl3": "article h3",
+    "lvl4": "article h4",
+    "lvl5": "article h5",
+    "text": "article p,article pre code"
+  }
+}
