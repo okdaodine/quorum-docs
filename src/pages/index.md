@@ -11,8 +11,8 @@ Quorum 是一个给去中心化应用提供存储的基础设施。
 那么，我们如何往 Quorum 节点上面存储数据呢？以 JavaScript 为例：
 
 ```javascript
-import SDK from 'rum-sdk-browser';
-import { ethers } from 'ethers';
+const SDK = require('rum-sdk-nodejs');
+const { ethers } = require("ethers");
 
 // create an ethereum wallet
 const wallet = ethers.Wallet.createRandom();
