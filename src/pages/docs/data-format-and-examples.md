@@ -16,7 +16,7 @@ title: 数据格式和例子
 
 {% tab label="Javascript" %}
 ```javascript
-import SDK from 'rum-sdk-nodejs';
+const SDK = require('rum-sdk-nodejs');
 const group = SDK.cache.Group.add('rum://...');
 SDK.chain.Trx.create({
   data: {
@@ -66,7 +66,7 @@ SDK.chain.Trx.create({
 
 {% tab label="Javascript" %}
 ```javascript
-import SDK from 'rum-sdk-nodejs';
+const SDK = require('rum-sdk-nodejs');
 const group = SDK.cache.Group.add('rum://...');
 SDK.chain.Trx.create({
   data: {
@@ -128,7 +128,7 @@ SDK.chain.Trx.create({
 
 {% tab label="Javascript" %}
 ```javascript
-import SDK from 'rum-sdk-nodejs';
+const SDK = require('rum-sdk-nodejs');
 const group = SDK.cache.Group.add('rum://...');
 SDK.chain.Trx.create({
   data: {
@@ -176,7 +176,7 @@ SDK.chain.Trx.create({
 
 {% tab label="Javascript" %}
 ```javascript
-import SDK from 'rum-sdk-nodejs';
+const SDK = require('rum-sdk-nodejs');
 const group = SDK.cache.Group.add('rum://...');
 SDK.chain.Trx.create({
   data: {
@@ -232,7 +232,7 @@ SDK.chain.Trx.create({
 
 {% tab label="Javascript" %}
 ```javascript
-import SDK from 'rum-sdk-nodejs';
+const SDK = require('rum-sdk-nodejs');
 const group = SDK.cache.Group.add('rum://...');
 SDK.chain.Trx.create({
   data: {
@@ -280,7 +280,7 @@ SDK.chain.Trx.create({
 
 {% tab label="Javascript" %}
 ```javascript
-import SDK from 'rum-sdk-nodejs';
+const SDK = require('rum-sdk-nodejs');
 const group = SDK.cache.Group.add('rum://...');
 SDK.chain.Trx.create({
   data: {
@@ -328,7 +328,7 @@ SDK.chain.Trx.create({
 
 {% tab label="Javascript" %}
 ```javascript
-import SDK from 'rum-sdk-nodejs';
+const SDK = require('rum-sdk-nodejs');
 const group = SDK.cache.Group.add('rum://...');
 SDK.chain.Trx.create({
   data: {
@@ -386,7 +386,7 @@ SDK.chain.Trx.create({
 
 {% tab label="Javascript" %}
 ```javascript
-import SDK from 'rum-sdk-nodejs';
+const SDK = require('rum-sdk-nodejs');
 const group = SDK.cache.Group.add('rum://...');
 SDK.chain.Trx.create({
   data: {
@@ -436,7 +436,7 @@ SDK.chain.Trx.create({
 
 {% tab label="Javascript" %}
 ```javascript
-import SDK from 'rum-sdk-nodejs';
+const SDK = require('rum-sdk-nodejs');
 const group = SDK.cache.Group.add('rum://...');
 SDK.chain.Trx.create({
   data: {
@@ -484,7 +484,7 @@ SDK.chain.Trx.create({
 
 {% tab label="Javascript" %}
 ```javascript
-import SDK from 'rum-sdk-nodejs';
+const SDK = require('rum-sdk-nodejs');
 const group = SDK.cache.Group.add('rum://...');
 SDK.chain.Trx.create({
   data: {
@@ -532,7 +532,7 @@ SDK.chain.Trx.create({
 
 {% tab label="Javascript" %}
 ```javascript
-import SDK from 'rum-sdk-nodejs';
+const SDK = require('rum-sdk-nodejs');
 const group = SDK.cache.Group.add('rum://...');
 SDK.chain.Trx.create({
   data: {
