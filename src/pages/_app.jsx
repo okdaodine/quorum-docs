@@ -10,8 +10,11 @@ import '@/styles/tailwind.css'
 const navigationCN = [
   {
     expand: true,
-    title: '前言',
-    links: [{ title: '快速开始', href: '/' }],
+    title: '开始',
+    links: [
+      { title: '介绍', href: '/' },
+      { title: '快速开始', href: '/quick-start' }
+    ],
   },
   {
     expand: true,

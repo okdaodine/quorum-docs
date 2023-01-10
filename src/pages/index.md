@@ -1,136 +1,77 @@
 ---
-title: 快速开始
-description: 描述一下这个页面的概要
+title: 概述
 ---
 
-学习如何快速基于 Rum 开发一个应用
+Quorum 是一个给去中心化应用提供存储的基础设施。
 
----
+作为用户，您可以运行 Quorum 节点来存储数据，从而 100% 地掌握你自己的数据。
 
-## 准备工作
+作为开发者，您可以基于 Quorum 打造一个去中心化的应用程序。
 
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur. `quorum` 不错
+那么，我们如何往 Quorum 节点上面存储数据呢？以 JavaScript 为例：
 
-这是 `中文` 的 code。推送一下代码会自动 build 吗？
-
-
-### 安装依赖
-
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur quaerat exercitationem. Consequatur et cum atque mollitia qui quia necessitatibus.
-
-```shell
-npm install
-```
-
-### 环境配置
-
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur quaerat exercitationem. Consequatur et cum atque mollitia qui quia necessitatibus.
-
----
-
-## 基本用法
-
-用三种语言实现生成随机数
-
-{% tabs %}
-
-{% tab label="Javascript" %}
 ```javascript
-function getRandomInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min)
-}
-const rndInt = getRandomInteger(1, 6)
-console.log(rndInt)
+import SDK from 'rum-sdk-browser';
+import { ethers } from 'ethers';
+
+// create an ethereum wallet
+const wallet = ethers.Wallet.createRandom();
+
+// import group seed
+const group = SDK.cache.Group.add('rum://...');
+
+// sign data and send trx to group
+SDK.chain.Trx.create({
+  data: {
+    type: "Create",
+    object : {
+      type: "Note",
+      id: "1",
+      content: "hello world",
+    }
+  },
+  groupId: group.groupId,
+  privateKey: wallet.privateKey
+});
+
+// get data from chain
+const result = await SDK.chain.Content.list({
+  groupId: group.groupId,
+});
+console.log(result);
+// [{
+//   "Data": {
+//     "type": "Create",
+//     "object" : {
+//       "type": "Note",
+//       "id": "1",
+//       "content": "hello world",
+//     }
+//   },
+//   "TrxId": "...",
+//   "GroupId": "...",
+//   "TimeStamp": "...",
+//   "Version": "1.0.0",
+//   "Expired": 1672284016463,
+//   "Nonce": 1,
+//   "SenderPubkey": "...",
+//   "SenderSign": "..."
+// }]
 ```
-{% /tab %}
 
-{% tab label="Python" %}
-```python
-#!/usr/bin/python3
-import random
-random_number = random.randint(1, 10)
-print(random_number)
-```
-{% /tab %}
+更多的例子您可以参考[格式说明和例子](/docs/data-format-and-examples/)
 
-{% tab label="Go" %}
-```go
-package main
-import (
-    "fmt"
-    "math/rand"
-)
-func main() {
-    min := 10
-    max := 30
-    fmt.Println(rand.Intn(max - min) + min)
-} 
-```
-{% /tab %}
+## 官方网站
 
-{% /tabs %}
+Quorum Official Website [https://rumsystem.net](https://rumsystem.net)
 
-Praesentium laudantium magni. Consequatur reiciendis aliquid nihil iusto ut in et. Quisquam ut et aliquid occaecati. Culpa veniam aut et voluptates amet perspiciatis. Qui exercitationem in qui. Vel qui dignissimos sit quae distinctio.
+## SDK
 
-{% callout type="note" title="补充说明" %}
-This is what a disclaimer message looks like. You might want to include inline `code` in it. Or maybe you’ll want to include a [link](/) in it. I don’t think we should get too carried away with other scenarios like lists or tables — that would be silly.
-{% /callout %}
+1. JavaScript SDK (browser): [https://github.com/okdaodine/rum-sdk-browser](https://github.com/okdaodine/rum-sdk-browser)
+2. Nodejs SDK: [https://github.com/okdaodine/rum-sdk-nodejs](https://github.com/okdaodine/rum-sdk-nodejs)
+3. Ruby SDK: [https://github.com/an-lee/quorum_sdk](https://github.com/an-lee/quorum_sdk)
+4. Python SDK: (WIP...)
 
+## 开源
 
-## 基本用法2
-
-用三种语言实现生成随机数
-
-{% tabs %}
-
-{% tab label="Javascript" %}
-```javascript
-function getRandomInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min)
-}
-const rndInt = getRandomInteger(1, 6)
-console.log(rndInt)
-function getRandomInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min)
-}
-const rndInt = getRandomInteger(1, 6)
-console.log(rndInt)
-function getRandomInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min)
-}
-const rndInt = getRandomInteger(1, 6)
-console.log(rndInt)
-```
-{% /tab %}
-
-{% tab label="Python" %}
-```python
-#!/usr/bin/python3
-import random
-random_number = random.randint(1, 10)
-print(random_number)
-```
-{% /tab %}
-
-{% tab label="Go" %}
-```go
-package main
-import (
-    "fmt"
-    "math/rand"
-)
-func main() {
-    min := 10
-    max := 30
-    fmt.Println(rand.Intn(max - min) + min)
-} 
-```
-{% /tab %}
-
-{% /tabs %}
-
-Praesentium laudantium magni. Consequatur reiciendis aliquid nihil iusto ut in et. Quisquam ut et aliquid occaecati. Culpa veniam aut et voluptates amet perspiciatis. Qui exercitationem in qui. Vel qui dignissimos sit quae distinctio.
-
-{% callout type="note" title="补充说明" %}
-This is what a disclaimer message looks like. You might want to include inline `code` in it. Or maybe you’ll want to include a [link](/) in it. I don’t think we should get too carried away with other scenarios like lists or tables — that would be silly.
-{% /callout %}
+Quorum 是开源的，您可以到这里查看源代码 [https://github.com/rumsystem/quorum](https://github.com/rumsystem/quorum)

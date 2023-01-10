@@ -51,14 +51,21 @@ export function Fence({ children, language }) {
             'fold': !expand,
             'expand': expand
           })}>
-            {tokens.map((line, index) => (
-              <React.Fragment key={index}>
-                {line.map((token, index) => (
-                  <span key={index} {...getTokenProps({ token })} />
-                ))}
-                {'\n'}
-              </React.Fragment>
-            ))}
+            {tokens.map((line, index) => {
+              if (line.length === 1 && line[0].empty) {
+                return (
+                  <React.Fragment key={index}>{'\n'}</React.Fragment>
+                );
+              }
+              return (
+                <React.Fragment key={index}>
+                  {line.map((token, index) => (
+                    <span key={index} {...getTokenProps({ token })} />
+                  ))}
+                  {'\n'}
+                </React.Fragment>
+              )
+            })}
           </code>
           {canExpand && !expand && (
             <div className="absolute bottom-0 inset-x-0 flex justify-center text-2xl bg-gradient-to-t text-white/90 dark:text-white/70 from-[#888] dark:from-[#444] to-transparent dark:to-transparent pt-[20px] pb-[8px] cursor-pointer" onClick={() => {
