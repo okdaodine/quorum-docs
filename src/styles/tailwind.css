@@ -1,6 +1,8 @@
 @import 'tailwindcss/base';
 @import './fonts.css';
-@import './docsearch.css';
+/* @import './docsearch.css'; */
+@import '@docsearch/css/dist/style.css';
+@import './docsearchvars.css';
 @import './prism.css';
 @import './customize.css';
 @import 'tailwindcss/components';
