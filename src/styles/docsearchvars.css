@@ -29,10 +29,7 @@
 }
 
 html[data-theme=dark] {
-  --docsearch-primary-color: theme('colors.slate.500');
-  --docsearch-hit-color: theme('colors.slate.300');
-  --docsearch-hit-active-color: theme('colors.slate.100');
-  --docsearch-highlight-color: theme('colors.sky.700');
+  --docsearch-primary-color: #ff931e;
   --docsearch-logo-color: theme('colors.slate.500');
   /* --docsearch-primary-color: #ff931e;
   --docsearch-highlight-color: var(--docsearch-primary-color);
