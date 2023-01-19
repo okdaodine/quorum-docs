@@ -74,6 +74,12 @@ export function Navigation({ navigation, className }) {
         REST API
         <FiExternalLink className="ml-2 text-orange-500" />
       </a>
+      <a
+        className='mt-4 font-display font-medium text-[#0D1117] dark:text-white flex items-center cursor-pointer select-none relative'
+        href="https://node.rumsystem.net/" target="_blank" rel="noopener noreferrer">
+        OPEN NODE
+        <FiExternalLink className="ml-2 text-orange-500" />
+      </a>
     </nav>
   )
 }
