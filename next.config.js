@@ -6,6 +6,10 @@ const nextConfig = {
   reactStrictMode: true,
 
   pageExtensions: ['js', 'jsx', 'md'],
+
+  images: {
+    unoptimized: true
+  }
 }
 
 module.exports = withMarkdoc()(nextConfig)
