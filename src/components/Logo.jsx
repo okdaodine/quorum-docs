@@ -1,3 +1,7 @@
+import Image from 'next/image';
+
 export function Logo() {
-  return <div className="text-xl text-slate-400 font-bold">Logo</div>
+  return (
+    <Image src="/logo.png" width="30" height="34" alt="logo" />
+  )
 }
