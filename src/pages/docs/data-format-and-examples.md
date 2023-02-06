@@ -478,7 +478,7 @@ SDK.chain.Trx.create({
 
 参考：[ActivityPub#Follow](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-follow), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
 
-## 取关
+## 取消关注
 
 {% tabs %}
 
