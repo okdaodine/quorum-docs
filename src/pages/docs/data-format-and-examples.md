@@ -488,10 +488,13 @@ const SDK = require('rum-sdk-nodejs');
 const group = SDK.cache.Group.add('rum://...');
 SDK.chain.Trx.create({
   data: {
-    type: "Ignore",
-    object : {
-      type: "Person",
-      id: "user eth address",
+    type: "Undo",
+    object: {
+      type: "Follow",
+      object : {
+        type: "Person",
+        id: "user eth address",
+      }
     }
   },
   groupId: group.groupId,
@@ -506,10 +509,13 @@ SDK.chain.Trx.create({
 // 上链之后的数据
 {
   "Data": {
-    "type": "Ignore",
-    "object" : {
-      "type": "Person",
-      "id": "user eth address",
+    "type": "Undo",
+    "object": {
+      "type": "Follow",
+      "object" : {
+        "type": "Person",
+        "id": "user eth address",
+      }
     }
   },
   "TrxId": "...",
@@ -524,7 +530,7 @@ SDK.chain.Trx.create({
 
 ```
 
-参考：[ActivityPub#Ignore](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-ignore), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
+参考：[ActivityPub#Undo](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-ignore), [ActivityPub#Follow](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-follow), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
 
 ## 屏蔽
 
@@ -573,3 +579,57 @@ SDK.chain.Trx.create({
 ```
 
 参考：[ActivityPub#Block](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-block), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
+
+## 取消屏蔽
+
+{% tabs %}
+
+{% tab label="Javascript" %}
+```javascript
+const SDK = require('rum-sdk-nodejs');
+const group = SDK.cache.Group.add('rum://...');
+SDK.chain.Trx.create({
+  data: {
+    type: "Undo",
+    object: {
+      type: "Block",
+      object : {
+        type: "Person",
+        id: "user eth address",
+      }
+    }
+  },
+  groupId: group.groupId,
+  privateKey: '...'
+});
+```
+{% /tab %}
+
+{% /tabs %}
+
+```json
+// 上链之后的数据
+{
+  "Data": {
+    "type": "Undo",
+    "object": {
+      "type": "Block",
+      "object" : {
+        "type": "Person",
+        "id": "user eth address",
+      }
+    }
+  },
+  "TrxId": "...",
+  "GroupId": "...",
+  "TimeStamp": "...",
+  "Version": "1.0.0",
+  "Expired": 1672284016463,
+  "Nonce": 1,
+  "SenderPubkey": "...",
+  "SenderSign": "..."
+}
+
+```
+
+参考：[ActivityPub#Undo](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-ignore), [ActivityPub#Block](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-block), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
