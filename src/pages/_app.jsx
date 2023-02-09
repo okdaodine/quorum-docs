@@ -26,7 +26,6 @@ const navigationCN = [
     title: '参与 quorum 开发',
     links: [
       { title: '源码编译 quorum', href: '/docs/build-quorum' },
-      { title: '编写 SDK', href: '/docs/build-sdk' }
     ],
   },
   {
@@ -39,17 +38,28 @@ const navigationCN = [
 const navigationEN = [
   {
     expand: true,
-    title: '前言（en）',
-    links: [{ title: '快速开始（en）', href: '/' }],
+    title: 'Start',
+    links: [
+      { title: 'Introduction', href: '/docs/en' },
+      { title: 'Quick start', href: '/docs/en/quick-start' }
+    ],
   },
   {
     expand: true,
-    title: '节点（en）',
-    links: [{ title: '运行全节点（en）', href: '/docs/en/run-fullnode' }],
+    title: 'Node',
+    links: [{ title: 'Run a fullnode', href: '/docs/en/run-fullnode' }],
   },
   {
-    title: '参与 quorum 开发（en）',
-    links: [{ title: '源码编译 quorum（en）', href: '/docs/en/build-quorum' }],
+    expand: true,
+    title: 'Contribution',
+    links: [
+      { title: 'Build quorum', href: '/docs/en/build-quorum' },
+    ],
+  },
+  {
+    expand: true,
+    title: 'Data',
+    links: [{ title: 'Format and examples', href: '/docs/en/data-format-and-examples' }],
   },
 ];
 

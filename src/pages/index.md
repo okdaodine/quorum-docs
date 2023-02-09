@@ -63,7 +63,7 @@ console.log(contents);
 
 ## 官方网站
 
-Quorum Official Website [https://rumsystem.net](https://rumsystem.net)
+Quorum official website [https://rumsystem.net](https://rumsystem.net)
 
 ## SDK
 

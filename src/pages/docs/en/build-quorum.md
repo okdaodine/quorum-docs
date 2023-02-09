@@ -1,19 +1,18 @@
 ---
-title: 从源代码构建 quorum（en）
-description: 如何从源代码编译 quorum
+title: Build quorum from source code
 ---
 
-从源代码编译 quorum
+Build quorum from source code
 
 ---
 
-## golang
+## Golang
 
-`quorum` 是 `golang` 开发的，所以，编译 `quorum` 前需要先准备好 `golang` 环境。
+`Quorum` is developed in `Golang`, so it is necessary to prepare the `Golang` environment before building `Quorum`.
 
-### 安装
+### Install
 
-`quorum` 支持 `go 1.19.x`
+`quorum` support `go 1.19.x`
 
 {% tabs %}
 
@@ -33,7 +32,7 @@ sudo apt update
 sudo apt install golang-go
 ```
 
-[更多安装方式](https://github.com/golang/go/wiki/Ubuntu)
+[More ways to install](https://github.com/golang/go/wiki/Ubuntu)
 {% /tab %}
 
 {% tab label="Arch Linux" %}
@@ -44,13 +43,13 @@ sudo pacman -Sy go
 
 {% /tab %}
 
-{% tab label="其它系统" %}
+{% tab label="Other" %}
 参考：[Download and install](https://go.dev/doc/install)
 {% /tab %}
 
 {% /tabs %}
 
-### 设置环境变量
+### Environment
 
 {% tabs %}
 {% tab label="*nix" %}
@@ -65,15 +64,15 @@ export GO111MODULE=on
 {% /tab %}
 {% /tabs %}
 
-### 设置镜像
+### Image mirror
 
-由于众所周知的原因，需要设置 `GOPROXY` 环境变量。如果你的网络不受该因素影响，不用做该设置。
+If your network is not affected by this, there is no need to make this setting.
 
 ```shell
 export GOPROXY=https://goproxy.cn,direct
 ```
 
-## 下载代码
+## Get the code
 
 ```shell
 git clone https://github.com/rumsystem/quorum.git
@@ -86,7 +85,7 @@ cd quorum
 go build -o quorum main.go
 ```
 
-也可以通过 `make` 命令完成编译。
+You can also build by `make` command
 
 {% tabs %}
 
@@ -123,20 +122,20 @@ make freebsd
 {% /tab %}
 {% /tabs %}
 
-## Swagger 文档
+## Swagger document
 
-`quorum` 的 `rest api` 都提供了 `swagger` 文档。
+`swagger` document provides all  `rest api` of `quorum`.
 
-### 生成 `swagger` 文档
+### generate `swagger` document
 
 ```shell
 make gen-doc
 ```
 
-### 查看 `swagger` 文档
+### See `swagger` document
 
 ```shell
 make serve-doc
 ```
 
-打开本地的 `swagger` 文档 <http://localhost:1323/swagger/index.html>
+Open: [http://localhost:1323/swagger/index.html](http://localhost:1323/swagger/index.html)

@@ -1,12 +1,12 @@
 ---
-title: Data Format and Examples
+title: Data format and examples
 ---
 
-In theory, you can submit data in any format to Quorum.
+Generally, you can send data to Quorum in any form.
 
 In order to keep the data consistent between different applications so that they can communicate with each other, the format we recommend is [ActivityPub](https://www.w3.org/TR/activitypub/) which is also used by [Mastodon](https://en.wikipedia.org/wiki/Mastodon_(social_network)).
 
-Next, we formulate the data format and submit it to Quorum through some real scenarios.
+Here is some examples.
 
 ---
 
@@ -36,7 +36,7 @@ SDK.chain.Trx.create({
 {% /tabs %}
 
 ```json
-// Data from chain
+// Data from the chain
 {
    "Data": {
      "type": "Create",
@@ -58,7 +58,7 @@ SDK.chain.Trx.create({
 
 ```
 
-Reference: [ActivityPub#Create](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create), [ActivityPub#Note](https://www.w3.org/TR/activitystreams- vocabulary/#dfn-note)
+Refer to: [ActivityPub#Create](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create), [ActivityPub#Note](https://www.w3.org/TR/activitystreams- vocabulary/#dfn-note)
 
 ## Create note with image
 
@@ -92,7 +92,7 @@ SDK.chain.Trx.create({
 {% /tabs %}
 
 ```json
-// Data from chain
+// Data from the chain
 {
    "Data": {
      "type": "Create",
@@ -120,7 +120,7 @@ SDK.chain.Trx.create({
 
 ```
 
-Reference: [ActivityPub#Create](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create), [ActivityPub#Note](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-note), [ActivityPub#Image](https://www.w3.org/TR/activitystreams-vocabulary/#ex80-jsonld)
+Refer to: [ActivityPub#Create](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create), [ActivityPub#Note](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-note), [ActivityPub#Image](https://www.w3.org/TR/activitystreams-vocabulary/#ex80-jsonld)
 
 ## Delete note
 
@@ -147,7 +147,7 @@ SDK.chain.Trx.create({
 {% /tabs %}
 
 ```json
-// Data from chain
+// Data from the chain
 {
    "Data": {
      "type": "Delete",
@@ -168,7 +168,7 @@ SDK.chain.Trx.create({
 
 ```
 
-Reference: [ActivityPub#Delete](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-delete)
+Refer to: [ActivityPub#Delete](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-delete)
 
 ## Update note
 
@@ -199,7 +199,7 @@ SDK.chain.Trx.create({
 {% /tabs %}
 
 ```json
-// Data from chain
+// Data from the chain
 {
    "Data": {
      "type": "Update",
@@ -224,7 +224,7 @@ SDK.chain.Trx.create({
 
 ```
 
-Reference: [ActivityPub#Update](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-update)
+Refer to: [ActivityPub#Update](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-update)
 
 ## Like
 
@@ -251,7 +251,7 @@ SDK.chain.Trx.create({
 {% /tabs %}
 
 ```json
-// Data from chain
+// Data from the chain
 {
   "Data": {
     "type": "Like",
@@ -272,7 +272,7 @@ SDK.chain.Trx.create({
 
 ```
 
-参考：[ActivityPub#Like](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-like)
+Refer to: [ActivityPub#Like](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-like)
 
 ## Dislike
 
@@ -299,7 +299,7 @@ SDK.chain.Trx.create({
 {% /tabs %}
 
 ```json
-// Data from chain
+// Data from the chain
 {
   "Data": {
     "type": "Dislike",
@@ -320,7 +320,7 @@ SDK.chain.Trx.create({
 
 ```
 
-参考：[ActivityPub#Dislike](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-dislike)
+Refer to: [ActivityPub#Dislike](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-dislike)
 
 ## Comment
 
@@ -352,7 +352,7 @@ SDK.chain.Trx.create({
 {% /tabs %}
 
 ```json
-// Data from chain
+// Data from the chain
 {
   "Data": {
     "type": "Create",
@@ -378,7 +378,7 @@ SDK.chain.Trx.create({
 
 ```
 
-参考：[ActivityPub#Create](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create), [ActivityPub#inreplyto](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-inreplyto)
+Refer to: [ActivityPub#Create](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create), [ActivityPub#inreplyto](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-inreplyto)
 
 ## Profile
 
@@ -406,7 +406,7 @@ SDK.chain.Trx.create({
 {% /tabs %}
 
 ```json
-// Data from chain
+// Data from the chain
 {
   "Data": {
     "type": "Create",
@@ -428,7 +428,7 @@ SDK.chain.Trx.create({
 
 ```
 
-参考：[ActivityPub#Create](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
+Refer to: [ActivityPub#Create](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
 
 ## Follow
 
@@ -455,7 +455,7 @@ SDK.chain.Trx.create({
 {% /tabs %}
 
 ```json
-// Data from chain
+// Data from the chain
 {
   "Data": {
     "type": "Follow",
@@ -476,7 +476,7 @@ SDK.chain.Trx.create({
 
 ```
 
-参考：[ActivityPub#Follow](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-follow), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
+Refer to: [ActivityPub#Follow](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-follow), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
 
 ## Unfollow
 
@@ -506,7 +506,7 @@ SDK.chain.Trx.create({
 {% /tabs %}
 
 ```json
-// Data from chain
+// Data from the chain
 {
   "Data": {
     "type": "Undo",
@@ -530,7 +530,7 @@ SDK.chain.Trx.create({
 
 ```
 
-参考：[ActivityPub#Undo](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-ignore), [ActivityPub#Follow](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-follow), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
+Refer to: [ActivityPub#Undo](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-ignore), [ActivityPub#Follow](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-follow), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
 
 ## Block
 
@@ -557,7 +557,7 @@ SDK.chain.Trx.create({
 {% /tabs %}
 
 ```json
-// Data from chain
+// Data from the chain
 {
   "Data": {
     "type": "Block",
@@ -578,7 +578,7 @@ SDK.chain.Trx.create({
 
 ```
 
-参考：[ActivityPub#Block](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-block), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
+Refer to: [ActivityPub#Block](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-block), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
 
 ## Unblock
 
@@ -608,7 +608,7 @@ SDK.chain.Trx.create({
 {% /tabs %}
 
 ```json
-// Data from chain
+// Data from the chain
 {
   "Data": {
     "type": "Undo",
@@ -632,4 +632,4 @@ SDK.chain.Trx.create({
 
 ```
 
-参考：[ActivityPub#Undo](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-ignore), [ActivityPub#Block](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-block), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
+Refer to: [ActivityPub#Undo](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-ignore), [ActivityPub#Block](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-block), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)

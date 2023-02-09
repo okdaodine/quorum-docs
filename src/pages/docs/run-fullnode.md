@@ -1,6 +1,5 @@
 ---
 title: 运行全节点
-description: 介绍如何运行全节点
 ---
 
 介绍如何运行全节点，全节点也称为 `fullnode`。

@@ -1,30 +1,29 @@
 ---
-title: 运行全节点（en）
-description: 介绍如何运行全节点
+title: Run a fullnode
 ---
 
-介绍如何运行全节点，全节点也称为 `fullnode`。
+Introducing how to run a fullnode
 
 ---
 
-## 节点简介
+## What is fullnode?
 
-全节点是拥有一对密钥并连接到 `p2p网络` 的用户。
+A fullnode is a user who owns a pair of keys and connects to the `p2p network`.
 
-## 获取 quorum 二进制程序
+## Get the quorum binary
 
 {% tabs %}
 
-{% tab label="手动编译" %}
-参考 [源码编译 quorum](/docs/build-quorum)
+{% tab label="Compile" %}
+See [Build quorum from source code](/docs/build-quorum)
 {% /tab %}
 
-{% tab label="下载编译好的" %}
+{% tab label="Download" %}
 {% /tab %}
 
 {% /tabs %}
 
-## 运行 quorum fullnode
+## Run a fullnode
 
 ```shell
 RUM_KSPASSWD=123 ./quorum fullnode \
@@ -40,33 +39,33 @@ RUM_KSPASSWD=123 ./quorum fullnode \
     --loglevel info
 ```
 
-### 参数说明
+### Parameter Description
 
-#### 常用参数
+#### Common parameters
 
-- `--peername` 节点名称；默认值：`peer`
-- `--configdir` 存放配置文件的目录；默认值：`./config`
-- `--datadir` 存放数据文件的目录；默认值：`./data`
-- `--keystoredir` 存放 keystore 的目录；默认值：`./keystore`
-- `--keystorename` keystore 的名称；默认值：`default`
-- `--keystorepass` keystore 的密码；如果不指定会启动时会提示输入
-- `--peer` 指定 `bootstrap` 的地址，可以指定多个，比如：`--peer /ip4/94.23.17.189/tcp/10666/p2p/16Uiu2HAmGTcDnhj3KVQUwVx8SGLyKBXQwfAxNayJdEwfsnUYKK4u --peer /ip4/132.145.109.63/tcp/10666/p2p/16Uiu2HAmTovb8kAJiYK8saskzz7cRQhb45NRK5AsbtdmYsLfD3RM`
-- `--listen` 监听地址，可以指定多次，比如：` --listen /ip4/127.0.0.1/tcp/4215 --listen /ip/127.0.0.1/tcp/5215/ws`
-- `rest api` 参数
-  - `--apihost` 指定 `rest api` 服务的 `ip` 或 `域名`
-  - `--apiport` 指定 `rest api` 服务监听端口
-- `--bootstrap` 是否启动 `bootstrap` 节点
+- `--peername` node name; default: `peer`
+- `--configdir` directory to store configuration files; default value: `./config`
+- `--datadir` directory to store data files; default: `./data`
+- `--keystoredir` the directory where the keystore is stored; default: `./keystore`
+- `--keystorename` name of the keystore; default: `default`
+- `--keystorepass` keystore password; if not specified, it will prompt for input when starting
+- `--peer` specifies the address of `bootstrap`, you can specify multiple addresses, for example: `--peer /ip4/94.23.17.189/tcp/10666/p2p/16Uiu2HAmGTcDnhj3KVQUwVx8SGLyKBXQwfAxNayJdEwfsnUYKK4u --peer /ip4/132.145.109.109. 10666/p2p/16Uiu2HAmTovb8kAJiYK8saskzz7cRQhb45NRK5AsbtdmYsLfD3RM`
+- `--listen` listening address, you can specify multiple times, for example: `--listen /ip4/127.0.0.1/tcp/4215 --listen /ip/127.0.0.1/tcp/5215/ws`
+- `rest api` parameters
+   - `--apihost` specifies the `ip` or `domain name` of the `rest api` service
+   - `--apiport` specifies the `rest api` service listening port
+- `--bootstrap` whether to start the `bootstrap` node
 
-#### 日志相关的参数
+#### Log related parameters
 
-- `--loglevel` 设置日志级别，可选值：`debug`、`info`、`error`；默认是 `error`
-- `--logfile` 可以指定日志文件的路径；默认打印到标准输出
-  - `--log-max-size` 单个日志文件最多能占用多少硬盘空间，单位：兆；默认是 `100m`
-  - `--log-max-age` 日志文件最多保留多久，旧的日志文件最多保留多久；默认 7 天
-  - `--log-max-backups` 做多能有几个日志文件；默认是 3 个
-  - `--log-compress` 设置日志文件是否自动压缩；默认压缩
+- `--loglevel` set the log level, optional values: `debug`, `info`, `error`; the default is `error`
+- `--logfile` can specify the path of the log file; the default is to print to standard output
+   - `--log-max-size` How much hard disk space a single log file can occupy at most, unit: megabytes; default is `100m`
+   - `--log-max-age` How long to keep log files at most, and how long to keep old log files at most; default 7 days
+   - `--log-max-backups` how many log files there can be; default is 3
+   - `--log-compress` sets whether log files are automatically compressed; default compression
 
-### 查看帮助
+### View help
 
 ```shell
 ./quorum --help
@@ -104,6 +103,6 @@ Flags:
 Use "quorum [command] --help" for more information about a command.
 ```
 
-### 查看子命令的帮助
+### See help for subcommands
 
-运行 `quorum [command] --help` 可以查看子命令的帮助信息。
+Run `quorum [command] --help` to view the help information of subcommands.
