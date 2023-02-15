@@ -391,10 +391,13 @@ const group = SDK.cache.Group.add('rum://...');
 SDK.chain.Trx.create({
   data: {
     type: "Create",
-    object : {
-      type: "Person",
-      id: "user eth address",
-      name: "Jack"
+    object: {
+      type: "Profile",
+      name: "Jack",
+      describes: {
+        type: "Person",
+        id: "user eth address"
+      }
     }
   },
   groupId: group.groupId,
@@ -410,10 +413,13 @@ SDK.chain.Trx.create({
 {
   "Data": {
     "type": "Create",
-    "object" : {
-      "type": "Person",
-      "id": "user eth address",
-      "name": "Jack"
+    "object": {
+      "type": "Profile",
+      "name": "Jack",
+      "describes": {
+        "type": "Person",
+        "id": "user eth address"
+      }
     }
   },
   "TrxId": "...",
@@ -428,7 +434,7 @@ SDK.chain.Trx.create({
 
 ```
 
-参考：[ActivityPub#Create](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
+参考：[ActivityPub#Create](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create), [ActivityPub#Profile](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-profile)
 
 ## 关注
 
