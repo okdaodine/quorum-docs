@@ -274,6 +274,60 @@ SDK.chain.Trx.create({
 
 参考：[ActivityPub#Like](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-like)
 
+## 取消点赞
+
+{% tabs %}
+
+{% tab label="Javascript" %}
+```javascript
+const SDK = require('rum-sdk-nodejs');
+const group = SDK.cache.Group.add('rum://...');
+SDK.chain.Trx.create({
+  data: {
+    type: 'Undo',
+    object: {
+      type: "Like",
+      object : {
+        type: "Note",
+        id: "1",
+      }
+    }
+  },
+  groupId: group.groupId,
+  privateKey: '...'
+});
+```
+{% /tab %}
+
+{% /tabs %}
+
+```json
+// 上链之后的数据
+{
+  "Data": {
+    "type": "Undo",
+    "object": {
+      "type": "Like",
+      "object" : {
+        "type": "Note",
+        "id": "1",
+      }
+    }
+  },
+  "TrxId": "...",
+  "GroupId": "...",
+  "TimeStamp": "...",
+  "Version": "1.0.0",
+  "Expired": 1672284016463,
+  "Nonce": 1,
+  "SenderPubkey": "...",
+  "SenderSign": "..."
+}
+
+```
+
+参考：[ActivityPub#Undo](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-ignore), [ActivityPub#Like](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-like)
+
 ## 点踩
 
 {% tabs %}
@@ -320,7 +374,59 @@ SDK.chain.Trx.create({
 
 ```
 
-参考：[ActivityPub#Dislike](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-dislike)
+## 取消点踩
+
+{% tabs %}
+
+{% tab label="Javascript" %}
+```javascript
+const SDK = require('rum-sdk-nodejs');
+const group = SDK.cache.Group.add('rum://...');
+SDK.chain.Trx.create({
+  data: {
+    type: "Undo",
+    object: {
+      type: "Dislike",
+      object : {
+        type: "Note",
+        id: "1",
+      }
+    }
+  },
+  groupId: group.groupId,
+  privateKey: '...'
+});
+```
+{% /tab %}
+
+{% /tabs %}
+
+```json
+// 上链之后的数据
+{
+  "Data": {
+    "type": "Undo",
+    "object": {
+      "type": "Dislike",
+      "object" : {
+        "type": "Note",
+        "id": "1",
+      }
+    }
+  },
+  "TrxId": "...",
+  "GroupId": "...",
+  "TimeStamp": "...",
+  "Version": "1.0.0",
+  "Expired": 1672284016463,
+  "Nonce": 1,
+  "SenderPubkey": "...",
+  "SenderSign": "..."
+}
+
+```
+
+参考：[ActivityPub#Undo](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-ignore), [ActivityPub#Dislike](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-dislike)
 
 ## 评论
 

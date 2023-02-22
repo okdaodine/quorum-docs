@@ -274,6 +274,60 @@ SDK.chain.Trx.create({
 
 Refer to: [ActivityPub#Like](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-like)
 
+## Undo like
+
+{% tabs %}
+
+{% tab label="Javascript" %}
+```javascript
+const SDK = require('rum-sdk-nodejs');
+const group = SDK.cache.Group.add('rum://...');
+SDK.chain.Trx.create({
+  data: {
+    type: 'Undo',
+    object: {
+      type: "Like",
+      object : {
+        type: "Note",
+        id: "1",
+      }
+    }
+  },
+  groupId: group.groupId,
+  privateKey: '...'
+});
+```
+{% /tab %}
+
+{% /tabs %}
+
+```json
+// Data from the chain
+{
+  "Data": {
+    "type": "Undo",
+    "object": {
+      "type": "Like",
+      "object" : {
+        "type": "Note",
+        "id": "1",
+      }
+    }
+  },
+  "TrxId": "...",
+  "GroupId": "...",
+  "TimeStamp": "...",
+  "Version": "1.0.0",
+  "Expired": 1672284016463,
+  "Nonce": 1,
+  "SenderPubkey": "...",
+  "SenderSign": "..."
+}
+
+```
+
+参考：[ActivityPub#Undo](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-ignore), [ActivityPub#Like](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-like)
+
 ## Dislike
 
 {% tabs %}
@@ -321,6 +375,60 @@ SDK.chain.Trx.create({
 ```
 
 Refer to: [ActivityPub#Dislike](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-dislike)
+
+## Undo dislike
+
+{% tabs %}
+
+{% tab label="Javascript" %}
+```javascript
+const SDK = require('rum-sdk-nodejs');
+const group = SDK.cache.Group.add('rum://...');
+SDK.chain.Trx.create({
+  data: {
+    type: "Undo",
+    object: {
+      type: "Dislike",
+      object : {
+        type: "Note",
+        id: "1",
+      }
+    }
+  },
+  groupId: group.groupId,
+  privateKey: '...'
+});
+```
+{% /tab %}
+
+{% /tabs %}
+
+```json
+// Data from the chain
+{
+  "Data": {
+    "type": "Undo",
+    "object": {
+      "type": "Dislike",
+      "object" : {
+        "type": "Note",
+        "id": "1",
+      }
+    }
+  },
+  "TrxId": "...",
+  "GroupId": "...",
+  "TimeStamp": "...",
+  "Version": "1.0.0",
+  "Expired": 1672284016463,
+  "Nonce": 1,
+  "SenderPubkey": "...",
+  "SenderSign": "..."
+}
+
+```
+
+参考：[ActivityPub#Undo](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-ignore), [ActivityPub#Dislike](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-dislike)
 
 ## Comment
 
