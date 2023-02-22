@@ -326,7 +326,7 @@ SDK.chain.Trx.create({
 
 ```
 
-参考：[ActivityPub#Undo](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-ignore), [ActivityPub#Like](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-like)
+参考：[ActivityPub#Undo](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-undo), [ActivityPub#Like](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-like)
 
 ## 点踩
 
@@ -426,7 +426,7 @@ SDK.chain.Trx.create({
 
 ```
 
-参考：[ActivityPub#Undo](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-ignore), [ActivityPub#Dislike](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-dislike)
+参考：[ActivityPub#Undo](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-undo), [ActivityPub#Dislike](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-dislike)
 
 ## 评论
 
@@ -642,7 +642,7 @@ SDK.chain.Trx.create({
 
 ```
 
-参考：[ActivityPub#Undo](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-ignore), [ActivityPub#Follow](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-follow), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
+参考：[ActivityPub#Undo](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-undo), [ActivityPub#Follow](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-follow), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
 
 ## 屏蔽
 
@@ -744,4 +744,4 @@ SDK.chain.Trx.create({
 
 ```
 
-参考：[ActivityPub#Undo](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-ignore), [ActivityPub#Block](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-block), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
+参考：[ActivityPub#Undo](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-undo), [ActivityPub#Block](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-block), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
