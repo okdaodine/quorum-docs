@@ -15,22 +15,57 @@ title: 数据格式和例子
 {% tabs %}
 
 {% tab label="Javascript" %}
+
 ```javascript
-const SDK = require('rum-sdk-nodejs');
-const group = SDK.cache.Group.add('rum://...');
+const SDK = require('rum-sdk-nodejs')
+const group = SDK.cache.Group.add('rum://...')
 SDK.chain.Trx.create({
   data: {
-    type: "Create",
-    object : {
-      type: "Note",
-      id: "1",
-      content: "hello world",
-    }
+    type: 'Create',
+    object: {
+      type: 'Note',
+      id: '1',
+      content: 'hello world',
+    },
   },
   groupId: group.groupId,
-  privateKey: '...'
-});
+  privateKey: '...',
+})
 ```
+
+{% /tab %}
+
+{% tab label="Python" %}
+
+```python
+"""
+pip install -U quorum-lightnode eth-keys
+"""
+import secrets
+
+import eth_keys
+from lightnode import LightNode
+from lightnode.utils import pretty_print
+
+lightnode = LightNode("/tmp/lightnode")
+group_id = "group uuid4 id"
+private_key = eth_keys.keys.PrivateKey(secrets.token_bytes(32)).to_bytes()
+
+def send_trx():
+    obj = {
+        "type": "Create",
+        "object": {
+            "type": "Note",
+            "id": "1",
+            "content": "hello world",
+        },
+    }
+    pretty_print(lightnode.post_to_group(group_id, private_key, obj))
+
+if __name__ == "__main__":
+    send_trx()
+```
+
 {% /tab %}
 
 {% /tabs %}
@@ -40,10 +75,10 @@ SDK.chain.Trx.create({
 {
   "Data": {
     "type": "Create",
-    "object" : {
+    "object": {
       "type": "Note",
       "id": "1",
-      "content": "hello world",
+      "content": "hello world"
     }
   },
   "TrxId": "...",
@@ -55,7 +90,6 @@ SDK.chain.Trx.create({
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
-
 ```
 
 参考：[ActivityPub#Create](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create), [ActivityPub#Note](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-note)
@@ -65,6 +99,7 @@ SDK.chain.Trx.create({
 {% tabs %}
 
 {% tab label="Javascript" %}
+
 ```javascript
 const SDK = require('rum-sdk-nodejs');
 const group = SDK.cache.Group.add('rum://...');
@@ -87,6 +122,46 @@ SDK.chain.Trx.create({
   privateKey: '...'
 });
 ```
+
+{% /tab %}
+
+{% tab label="Python" %}
+
+```python
+"""
+pip install -U quorum-lightnode eth-keys
+"""
+import secrets
+
+import eth_keys
+from lightnode import LightNode
+from lightnode.utils import pretty_print
+
+lightnode = LightNode("/tmp/lightnode")
+group_id = "group uuid4 id"
+private_key = eth_keys.keys.PrivateKey(secrets.token_bytes(32)).to_bytes()
+
+def send_trx():
+    obj = {
+        "type": "Create",
+        "object": {
+            "type": "Note",
+            "id": "1",
+            "content": "hello world",
+            "image": [{
+                "type": "Image",
+                "name": "blue sky",
+                "mediaType": "image/jpeg"
+                "content": "data:image/jpeg;base64,/9j/4AA..."
+            }]
+        },
+    }
+    pretty_print(lightnode.post_to_group(group_id, private_key, obj))
+
+if __name__ == "__main__":
+    send_trx()
+```
+
 {% /tab %}
 
 {% /tabs %}
@@ -127,21 +202,55 @@ SDK.chain.Trx.create({
 {% tabs %}
 
 {% tab label="Javascript" %}
+
 ```javascript
-const SDK = require('rum-sdk-nodejs');
-const group = SDK.cache.Group.add('rum://...');
+const SDK = require('rum-sdk-nodejs')
+const group = SDK.cache.Group.add('rum://...')
 SDK.chain.Trx.create({
   data: {
-    type: "Delete",
-    object : {
-      type: "Note",
-      id: "1",
-    }
+    type: 'Delete',
+    object: {
+      type: 'Note',
+      id: '1',
+    },
   },
   groupId: group.groupId,
-  privateKey: '...'
-});
+  privateKey: '...',
+})
 ```
+
+{% /tab %}
+
+{% tab label="Python" %}
+
+```python
+"""
+pip install -U quorum-lightnode eth-keys
+"""
+import secrets
+
+import eth_keys
+from lightnode import LightNode
+from lightnode.utils import pretty_print
+
+lightnode = LightNode("/tmp/lightnode")
+group_id = "group uuid4 id"
+private_key = eth_keys.keys.PrivateKey(secrets.token_bytes(32)).to_bytes()
+
+def send_trx():
+    obj = {
+        type: 'Delete',
+        "object": {
+            "type": "Note",
+            "id": "1",
+        },
+    }
+    pretty_print(lightnode.post_to_group(group_id, private_key, obj))
+
+if __name__ == "__main__":
+    send_trx()
+```
+
 {% /tab %}
 
 {% /tabs %}
@@ -151,9 +260,9 @@ SDK.chain.Trx.create({
 {
   "Data": {
     "type": "Delete",
-    "object" : {
+    "object": {
       "type": "Note",
-      "id": "1",
+      "id": "1"
     }
   },
   "TrxId": "...",
@@ -165,7 +274,6 @@ SDK.chain.Trx.create({
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
-
 ```
 
 参考：[ActivityPub#Delete](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-delete)
@@ -175,27 +283,64 @@ SDK.chain.Trx.create({
 {% tabs %}
 
 {% tab label="Javascript" %}
+
 ```javascript
-const SDK = require('rum-sdk-nodejs');
-const group = SDK.cache.Group.add('rum://...');
+const SDK = require('rum-sdk-nodejs')
+const group = SDK.cache.Group.add('rum://...')
 SDK.chain.Trx.create({
   data: {
-    type: "Update",
-    object : {
-      type: "Note",
-      id: "1",
+    type: 'Update',
+    object: {
+      type: 'Note',
+      id: '1',
     },
     result: {
-      type: "Note",
-      content: "hello world (edit)",
-    }
+      type: 'Note',
+      content: 'hello world (edit)',
+    },
   },
   groupId: group.groupId,
-  privateKey: '...'
-});
+  privateKey: '...',
+})
 ```
+
 {% /tab %}
 
+{% tab label="Python" %}
+
+```python
+"""
+pip install -U quorum-lightnode eth-keys
+"""
+import secrets
+
+import eth_keys
+from lightnode import LightNode
+from lightnode.utils import pretty_print
+
+lightnode = LightNode("/tmp/lightnode")
+group_id = "group uuid4 id"
+private_key = eth_keys.keys.PrivateKey(secrets.token_bytes(32)).to_bytes()
+
+def send_trx():
+    obj = {
+        type: 'Update',
+        "object": {
+            "type": "Note",
+            "id": "1",
+        },
+        result: {
+            type: 'Note',
+            content: 'hello world (edit)',
+        },
+    }
+    pretty_print(lightnode.post_to_group(group_id, private_key, obj))
+
+if __name__ == "__main__":
+    send_trx()
+```
+
+{% /tab %}
 {% /tabs %}
 
 ```json
@@ -203,13 +348,13 @@ SDK.chain.Trx.create({
 {
   "Data": {
     "type": "Update",
-    "object" : {
+    "object": {
       "type": "Note",
-      "id": "1",
+      "id": "1"
     },
     "result": {
       "type": "Note",
-      "content": "hello world (edit)",
+      "content": "hello world (edit)"
     }
   },
   "TrxId": "...",
@@ -221,7 +366,6 @@ SDK.chain.Trx.create({
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
-
 ```
 
 参考：[ActivityPub#Update](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-update)
@@ -231,21 +375,57 @@ SDK.chain.Trx.create({
 {% tabs %}
 
 {% tab label="Javascript" %}
+
 ```javascript
-const SDK = require('rum-sdk-nodejs');
-const group = SDK.cache.Group.add('rum://...');
+const SDK = require('rum-sdk-nodejs')
+const group = SDK.cache.Group.add('rum://...')
 SDK.chain.Trx.create({
   data: {
-    type: "Like",
-    object : {
-      type: "Note",
-      id: "1",
-    }
+    type: 'Like',
+    object: {
+      type: 'Note',
+      id: '1',
+    },
   },
   groupId: group.groupId,
-  privateKey: '...'
-});
+  privateKey: '...',
+})
 ```
+
+{% /tab %}
+
+{% tab label="Python" %}
+
+```python
+"""
+pip install -U quorum-lightnode eth-keys
+"""
+import secrets
+
+import eth_keys
+from lightnode import LightNode
+from lightnode.utils import pretty_print
+
+lightnode = LightNode("/tmp/lightnode")
+seed_url = "rum://..."
+lightnode.join_group(seed_url)
+seed = lightnode.decode_group_seed(seed_url)
+private_key = eth_keys.keys.PrivateKey(secrets.token_bytes(32)).to_bytes()
+
+def send_trx():
+    obj = {
+        type: 'Like',
+        "object": {
+            "type": "Note",
+            "id": "1",
+        },
+    }
+    pretty_print(lightnode.post_to_group(seed.seed.group_id, private_key, obj))
+
+if __name__ == "__main__":
+    send_trx()
+```
+
 {% /tab %}
 
 {% /tabs %}
@@ -255,9 +435,9 @@ SDK.chain.Trx.create({
 {
   "Data": {
     "type": "Like",
-    "object" : {
+    "object": {
       "type": "Note",
-      "id": "1",
+      "id": "1"
     }
   },
   "TrxId": "...",
@@ -269,7 +449,6 @@ SDK.chain.Trx.create({
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
-
 ```
 
 参考：[ActivityPub#Like](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-like)
@@ -279,24 +458,63 @@ SDK.chain.Trx.create({
 {% tabs %}
 
 {% tab label="Javascript" %}
+
 ```javascript
-const SDK = require('rum-sdk-nodejs');
-const group = SDK.cache.Group.add('rum://...');
+const SDK = require('rum-sdk-nodejs')
+const group = SDK.cache.Group.add('rum://...')
 SDK.chain.Trx.create({
   data: {
     type: 'Undo',
     object: {
-      type: "Like",
-      object : {
-        type: "Note",
-        id: "1",
-      }
-    }
+      type: 'Like',
+      object: {
+        type: 'Note',
+        id: '1',
+      },
+    },
   },
   groupId: group.groupId,
-  privateKey: '...'
-});
+  privateKey: '...',
+})
 ```
+
+{% /tab %}
+
+{% tab label="Python" %}
+
+```python
+"""
+pip install -U quorum-lightnode eth-keys
+"""
+import secrets
+
+import eth_keys
+from lightnode import LightNode
+from lightnode.utils import pretty_print
+
+lightnode = LightNode("/tmp/lightnode")
+seed_url = "rum://..."
+lightnode.join_group(seed_url)
+seed = lightnode.decode_group_seed(seed_url)
+private_key = eth_keys.keys.PrivateKey(secrets.token_bytes(32)).to_bytes()
+
+def send_trx():
+    obj = {
+        "type": 'Undo',
+        "object": {
+            "type": 'Like',
+            "object": {
+                "type": 'Note',
+                "id": '1',
+            },
+        },
+    }
+    pretty_print(lightnode.post_to_group(seed.seed.group_id, private_key, obj))
+
+if __name__ == "__main__":
+    send_trx()
+```
+
 {% /tab %}
 
 {% /tabs %}
@@ -308,9 +526,9 @@ SDK.chain.Trx.create({
     "type": "Undo",
     "object": {
       "type": "Like",
-      "object" : {
+      "object": {
         "type": "Note",
-        "id": "1",
+        "id": "1"
       }
     }
   },
@@ -323,7 +541,6 @@ SDK.chain.Trx.create({
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
-
 ```
 
 参考：[ActivityPub#Undo](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-undo), [ActivityPub#Like](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-like)
@@ -333,21 +550,57 @@ SDK.chain.Trx.create({
 {% tabs %}
 
 {% tab label="Javascript" %}
+
 ```javascript
-const SDK = require('rum-sdk-nodejs');
-const group = SDK.cache.Group.add('rum://...');
+const SDK = require('rum-sdk-nodejs')
+const group = SDK.cache.Group.add('rum://...')
 SDK.chain.Trx.create({
   data: {
-    type: "Dislike",
-    object : {
-      type: "Note",
-      id: "1",
-    }
+    type: 'Dislike',
+    object: {
+      type: 'Note',
+      id: '1',
+    },
   },
   groupId: group.groupId,
-  privateKey: '...'
-});
+  privateKey: '...',
+})
 ```
+
+{% /tab %}
+
+{% tab label="Python" %}
+
+```python
+"""
+pip install -U quorum-lightnode eth-keys
+"""
+import secrets
+
+import eth_keys
+from lightnode import LightNode
+from lightnode.utils import pretty_print
+
+lightnode = LightNode("/tmp/lightnode")
+seed_url = "rum://..."
+lightnode.join_group(seed_url)
+seed = lightnode.decode_group_seed(seed_url)
+private_key = eth_keys.keys.PrivateKey(secrets.token_bytes(32)).to_bytes()
+
+def send_trx():
+    obj = {
+        type: 'Dislike',
+        "object": {
+            "type": "Note",
+            "id": "1",
+        },
+    }
+    pretty_print(lightnode.post_to_group(seed.seed.group_id, private_key, obj))
+
+if __name__ == "__main__":
+    send_trx()
+```
+
 {% /tab %}
 
 {% /tabs %}
@@ -357,9 +610,9 @@ SDK.chain.Trx.create({
 {
   "Data": {
     "type": "Dislike",
-    "object" : {
+    "object": {
       "type": "Note",
-      "id": "1",
+      "id": "1"
     }
   },
   "TrxId": "...",
@@ -371,7 +624,6 @@ SDK.chain.Trx.create({
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
-
 ```
 
 ## 取消点踩
@@ -379,24 +631,63 @@ SDK.chain.Trx.create({
 {% tabs %}
 
 {% tab label="Javascript" %}
+
 ```javascript
-const SDK = require('rum-sdk-nodejs');
-const group = SDK.cache.Group.add('rum://...');
+const SDK = require('rum-sdk-nodejs')
+const group = SDK.cache.Group.add('rum://...')
 SDK.chain.Trx.create({
   data: {
-    type: "Undo",
+    type: 'Undo',
     object: {
-      type: "Dislike",
-      object : {
-        type: "Note",
-        id: "1",
-      }
-    }
+      type: 'Dislike',
+      object: {
+        type: 'Note',
+        id: '1',
+      },
+    },
   },
   groupId: group.groupId,
-  privateKey: '...'
-});
+  privateKey: '...',
+})
 ```
+
+{% /tab %}
+
+{% tab label="Python" %}
+
+```python
+"""
+pip install -U quorum-lightnode eth-keys
+"""
+import secrets
+
+import eth_keys
+from lightnode import LightNode
+from lightnode.utils import pretty_print
+
+lightnode = LightNode("/tmp/lightnode")
+seed_url = "rum://..."
+lightnode.join_group(seed_url)
+seed = lightnode.decode_group_seed(seed_url)
+private_key = eth_keys.keys.PrivateKey(secrets.token_bytes(32)).to_bytes()
+
+def send_trx():
+    obj = {
+        type: 'Undo',
+        object: {
+            type: 'Dislike',
+            object: {
+                type: 'Note',
+                id: '1',
+          },
+        },
+    }
+    pretty_print(lightnode.post_to_group(seed.seed.group_id, private_key, obj))
+
+if __name__ == "__main__":
+    send_trx()
+```
+
 {% /tab %}
 
 {% /tabs %}
@@ -408,9 +699,9 @@ SDK.chain.Trx.create({
     "type": "Undo",
     "object": {
       "type": "Dislike",
-      "object" : {
+      "object": {
         "type": "Note",
-        "id": "1",
+        "id": "1"
       }
     }
   },
@@ -423,7 +714,6 @@ SDK.chain.Trx.create({
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
-
 ```
 
 参考：[ActivityPub#Undo](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-undo), [ActivityPub#Dislike](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-dislike)
@@ -433,26 +723,67 @@ SDK.chain.Trx.create({
 {% tabs %}
 
 {% tab label="Javascript" %}
+
 ```javascript
-const SDK = require('rum-sdk-nodejs');
-const group = SDK.cache.Group.add('rum://...');
+const SDK = require('rum-sdk-nodejs')
+const group = SDK.cache.Group.add('rum://...')
 SDK.chain.Trx.create({
   data: {
-    type: "Create",
-    object : {
-      type: "Note",
-      id: "2",
-      content: "awesome !!!",
+    type: 'Create',
+    object: {
+      type: 'Note',
+      id: '2',
+      content: 'awesome !!!',
       inreplyto: {
-        type: "Note",
-        id: "1"
-      }
-    }
+        type: 'Note',
+        id: '1',
+      },
+    },
   },
   groupId: group.groupId,
-  privateKey: '...'
-});
+  privateKey: '...',
+})
 ```
+
+{% /tab %}
+
+{% tab label="Python" %}
+
+```python
+"""
+pip install -U quorum-lightnode eth-keys
+"""
+import secrets
+
+import eth_keys
+from lightnode import LightNode
+from lightnode.utils import pretty_print
+
+lightnode = LightNode("/tmp/lightnode")
+seed_url = "rum://..."
+lightnode.join_group(seed_url)
+seed = lightnode.decode_group_seed(seed_url)
+private_key = eth_keys.keys.PrivateKey(secrets.token_bytes(32)).to_bytes()
+
+def send_trx():
+    obj = {
+        "type": 'Create',
+        "object": {
+            "type": 'Note',
+            "id": '2',
+            "content": 'awesome !!!',
+            "inreplyto": {
+                "type": 'Note',
+                "id": '1',
+            },
+        },
+    }
+    pretty_print(lightnode.post_to_group(seed.seed.group_id, private_key, obj))
+
+if __name__ == "__main__":
+    send_trx()
+```
+
 {% /tab %}
 
 {% /tabs %}
@@ -462,7 +793,7 @@ SDK.chain.Trx.create({
 {
   "Data": {
     "type": "Create",
-    "object" : {
+    "object": {
       "type": "Note",
       "id": "2",
       "content": "awesome !!!",
@@ -481,7 +812,6 @@ SDK.chain.Trx.create({
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
-
 ```
 
 参考：[ActivityPub#Create](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create), [ActivityPub#inreplyto](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-inreplyto)
@@ -491,25 +821,27 @@ SDK.chain.Trx.create({
 {% tabs %}
 
 {% tab label="Javascript" %}
+
 ```javascript
-const SDK = require('rum-sdk-nodejs');
-const group = SDK.cache.Group.add('rum://...');
+const SDK = require('rum-sdk-nodejs')
+const group = SDK.cache.Group.add('rum://...')
 SDK.chain.Trx.create({
   data: {
-    type: "Create",
+    type: 'Create',
     object: {
-      type: "Profile",
-      name: "Jack",
+      type: 'Profile',
+      name: 'Jack',
       describes: {
-        type: "Person",
-        id: "user eth address"
-      }
-    }
+        type: 'Person',
+        id: 'user eth address',
+      },
+    },
   },
   groupId: group.groupId,
-  privateKey: '...'
-});
+  privateKey: '...',
+})
 ```
+
 {% /tab %}
 
 {% /tabs %}
@@ -537,7 +869,6 @@ SDK.chain.Trx.create({
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
-
 ```
 
 参考：[ActivityPub#Create](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create), [ActivityPub#Profile](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-profile)
@@ -547,21 +878,23 @@ SDK.chain.Trx.create({
 {% tabs %}
 
 {% tab label="Javascript" %}
+
 ```javascript
-const SDK = require('rum-sdk-nodejs');
-const group = SDK.cache.Group.add('rum://...');
+const SDK = require('rum-sdk-nodejs')
+const group = SDK.cache.Group.add('rum://...')
 SDK.chain.Trx.create({
   data: {
-    type: "Follow",
-    object : {
-      type: "Person",
-      id: "user eth address",
-    }
+    type: 'Follow',
+    object: {
+      type: 'Person',
+      id: 'user eth address',
+    },
   },
   groupId: group.groupId,
-  privateKey: '...'
-});
+  privateKey: '...',
+})
 ```
+
 {% /tab %}
 
 {% /tabs %}
@@ -571,9 +904,9 @@ SDK.chain.Trx.create({
 {
   "Data": {
     "type": "Follow",
-    "object" : {
+    "object": {
       "type": "Person",
-      "id": "user eth address",
+      "id": "user eth address"
     }
   },
   "TrxId": "...",
@@ -585,7 +918,6 @@ SDK.chain.Trx.create({
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
-
 ```
 
 参考：[ActivityPub#Follow](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-follow), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
@@ -595,24 +927,26 @@ SDK.chain.Trx.create({
 {% tabs %}
 
 {% tab label="Javascript" %}
+
 ```javascript
-const SDK = require('rum-sdk-nodejs');
-const group = SDK.cache.Group.add('rum://...');
+const SDK = require('rum-sdk-nodejs')
+const group = SDK.cache.Group.add('rum://...')
 SDK.chain.Trx.create({
   data: {
-    type: "Undo",
+    type: 'Undo',
     object: {
-      type: "Follow",
-      object : {
-        type: "Person",
-        id: "user eth address",
-      }
-    }
+      type: 'Follow',
+      object: {
+        type: 'Person',
+        id: 'user eth address',
+      },
+    },
   },
   groupId: group.groupId,
-  privateKey: '...'
-});
+  privateKey: '...',
+})
 ```
+
 {% /tab %}
 
 {% /tabs %}
@@ -624,9 +958,9 @@ SDK.chain.Trx.create({
     "type": "Undo",
     "object": {
       "type": "Follow",
-      "object" : {
+      "object": {
         "type": "Person",
-        "id": "user eth address",
+        "id": "user eth address"
       }
     }
   },
@@ -639,7 +973,6 @@ SDK.chain.Trx.create({
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
-
 ```
 
 参考：[ActivityPub#Undo](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-undo), [ActivityPub#Follow](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-follow), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
@@ -649,21 +982,23 @@ SDK.chain.Trx.create({
 {% tabs %}
 
 {% tab label="Javascript" %}
+
 ```javascript
-const SDK = require('rum-sdk-nodejs');
-const group = SDK.cache.Group.add('rum://...');
+const SDK = require('rum-sdk-nodejs')
+const group = SDK.cache.Group.add('rum://...')
 SDK.chain.Trx.create({
   data: {
-    type: "Block",
-    object : {
-      type: "Person",
-      id: "user eth address",
-    }
+    type: 'Block',
+    object: {
+      type: 'Person',
+      id: 'user eth address',
+    },
   },
   groupId: group.groupId,
-  privateKey: '...'
-});
+  privateKey: '...',
+})
 ```
+
 {% /tab %}
 
 {% /tabs %}
@@ -673,9 +1008,9 @@ SDK.chain.Trx.create({
 {
   "Data": {
     "type": "Block",
-    "object" : {
+    "object": {
       "type": "Person",
-      "id": "user eth address",
+      "id": "user eth address"
     }
   },
   "TrxId": "...",
@@ -687,7 +1022,6 @@ SDK.chain.Trx.create({
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
-
 ```
 
 参考：[ActivityPub#Block](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-block), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
@@ -697,24 +1031,26 @@ SDK.chain.Trx.create({
 {% tabs %}
 
 {% tab label="Javascript" %}
+
 ```javascript
-const SDK = require('rum-sdk-nodejs');
-const group = SDK.cache.Group.add('rum://...');
+const SDK = require('rum-sdk-nodejs')
+const group = SDK.cache.Group.add('rum://...')
 SDK.chain.Trx.create({
   data: {
-    type: "Undo",
+    type: 'Undo',
     object: {
-      type: "Block",
-      object : {
-        type: "Person",
-        id: "user eth address",
-      }
-    }
+      type: 'Block',
+      object: {
+        type: 'Person',
+        id: 'user eth address',
+      },
+    },
   },
   groupId: group.groupId,
-  privateKey: '...'
-});
+  privateKey: '...',
+})
 ```
+
 {% /tab %}
 
 {% /tabs %}
@@ -726,9 +1062,9 @@ SDK.chain.Trx.create({
     "type": "Undo",
     "object": {
       "type": "Block",
-      "object" : {
+      "object": {
         "type": "Person",
-        "id": "user eth address",
+        "id": "user eth address"
       }
     }
   },
@@ -741,7 +1077,6 @@ SDK.chain.Trx.create({
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
-
 ```
 
 参考：[ActivityPub#Undo](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-undo), [ActivityPub#Block](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-block), [ActivityPub#Person](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person)
