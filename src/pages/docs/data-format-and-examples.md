@@ -833,7 +833,6 @@ SDK.chain.Trx.create({
       name: 'Jack',
       image: {
         type: "Image",
-        name: "Avatar",
         mediaType: "image/jpeg"
         content: "data:image/jpeg;base64,/9j/4AA..."
       },
@@ -862,7 +861,6 @@ SDK.chain.Trx.create({
       "name": "Jack",
       "image": {
         "type": "Image",
-        "name": "Avatar",
         "mediaType": "image/jpeg",
         "content": "data:image/jpeg;base64,/9j/4AA..."
       },
