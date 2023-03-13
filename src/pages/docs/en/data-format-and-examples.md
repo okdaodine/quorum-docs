@@ -502,6 +502,12 @@ SDK.chain.Trx.create({
     object: {
       type: "Profile",
       name: "Jack",
+      image: {
+        type: "Image",
+        name: "Avatar",
+        mediaType: "image/jpeg"
+        content: "data:image/jpeg;base64,/9j/4AA..."
+      },
       describes: {
         type: "Person",
         id: "user eth address"
