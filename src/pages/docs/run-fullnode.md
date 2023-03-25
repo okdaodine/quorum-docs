@@ -27,16 +27,14 @@ title: 运行全节点
 
 ```shell
 RUM_KSPASSWD=123 ./quorum fullnode \
-    --peername mypeer
-    --configdir demo/config \
-    --datadir demo/data \
-    --keystoredir demo/keystore \
-    --listen /ip4/127.0.0.1/tcp/7002 \
-    --apiport 8002 \
-    --peer /ip4/94.23.17.189/tcp/10666/p2p/16Uiu2HAmGTcDnhj3KVQUwVx8SGLyKBXQwfAxNayJdEwfsnUYKK4u \
-    --peer /ip4/132.145.109.63/tcp/10666/p2p/16Uiu2HAmTovb8kAJiYK8saskzz7cRQhb45NRK5AsbtdmYsLfD3RM \
-    --autorelay=false \
-    --loglevel info
+    --keystoredir rum/keystore \
+    --configdir rum/config \
+    --datadir rum/data \
+    --certdir rum/certs \
+    --peer=/ip4/101.42.141.118/tcp/62777/p2p/16Uiu2HAm9uziCEHprbzJoBdG9uktUQSYuFY58eW7o5Dz7rKhRn2j \
+    --peer=/ip4/94.23.17.189/tcp/62777/p2p/16Uiu2HAm5waftP3s4oE1EzGF2SyWeK726P5B8BSgFJqSiz6xScGz \
+    --listen /ip4/0.0.0.0/tcp/7002 \
+    --apiport 8002
 ```
 
 ### 参数说明
