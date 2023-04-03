@@ -57,6 +57,7 @@ console.log(contents)
 //   "TrxId": "...",
 //   "GroupId": "...",
 //   "Version": "2.0.0",
+//   "TimeStamp" "1680526868853218300",
 //   "SenderPubkey": "...",
 //   "SenderSign": "..."
 // }]
