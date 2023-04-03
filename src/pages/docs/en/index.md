@@ -46,14 +46,12 @@ console.log(contents);
 //       "type": "Note",
 //       "id": "1",
 //       "content": "hello world",
-//     }
+//     },
+//     "published": "2022-12-12T12:12:12Z",
 //   },
 //   "TrxId": "...",
 //   "GroupId": "...",
-//   "TimeStamp": "...",
-//   "Version": "1.0.0",
-//   "Expired": 1672284016463,
-//   "Nonce": 1,
+//   "Version": "2.0.0",
 //   "SenderPubkey": "...",
 //   "SenderSign": "..."
 // }]
