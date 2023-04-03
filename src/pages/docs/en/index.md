@@ -24,11 +24,12 @@ const group = SDK.cache.Group.add('rum://...');
 SDK.chain.Trx.create({
   data: {
     type: "Create",
-    object : {
+    object: {
       type: "Note",
       id: "1",
       content: "hello world",
-    }
+    },
+    published: "2022-12-12T12:12:12Z",
   },
   groupId: group.groupId,
   privateKey: wallet.privateKey

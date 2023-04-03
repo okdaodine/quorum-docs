@@ -33,6 +33,7 @@ SDK.chain.Trx.create({
       id: '1',
       content: 'hello world',
     },
+    published: "2022-12-12T12:12:12Z",
   },
   groupId: group.groupId,
   privateKey: wallet.privateKey,
