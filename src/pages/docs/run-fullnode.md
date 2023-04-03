@@ -30,8 +30,8 @@ RUM_KSPASSWD=123 ./quorum fullnode \
     --keystoredir rum/keystore \
     --configdir rum/config \
     --datadir rum/data \
-    --peer=/ip4/101.42.141.118/tcp/62777/p2p/16Uiu2HAm9uziCEHprbzJoBdG9uktUQSYuFY58eW7o5Dz7rKhRn2j \
-    --peer=/ip4/94.23.17.189/tcp/62777/p2p/16Uiu2HAm5waftP3s4oE1EzGF2SyWeK726P5B8BSgFJqSiz6xScGz \
+    --peer /ip4/101.42.141.118/tcp/62777/p2p/16Uiu2HAm9uziCEHprbzJoBdG9uktUQSYuFY58eW7o5Dz7rKhRn2j \
+    --peer /ip4/94.23.17.189/tcp/62777/p2p/16Uiu2HAm5waftP3s4oE1EzGF2SyWeK726P5B8BSgFJqSiz6xScGz \
     --listen /ip4/0.0.0.0/tcp/7002 \
     --apiport 8002 \
     --loglevel info
@@ -47,7 +47,7 @@ RUM_KSPASSWD=123 ./quorum fullnode \
 - `--keystoredir` 存放 keystore 的目录；默认值：`./keystore`
 - `--keystorename` keystore 的名称；默认值：`default`
 - `--keystorepass` keystore 的密码；如果不指定会启动时会提示输入
-- `--peer` 指定 `bootstrap` 的地址，可以指定多个，比如：`--peer /ip4/94.23.17.189/tcp/10666/p2p/16Uiu2HAmGTcDnhj3KVQUwVx8SGLyKBXQwfAxNayJdEwfsnUYKK4u --peer /ip4/132.145.109.63/tcp/10666/p2p/16Uiu2HAmTovb8kAJiYK8saskzz7cRQhb45NRK5AsbtdmYsLfD3RM`
+- `--peer` 指定 `bootstrap` 的地址，可以指定多个，比如：`--peer /ip4/101.42.141.118/tcp/62777/p2p/16Uiu2HAm9uziCEHprbzJoBdG9uktUQSYuFY58eW7o5Dz7rKhRn2j --peer /ip4/94.23.17.189/tcp/62777/p2p/16Uiu2HAm5waftP3s4oE1EzGF2SyWeK726P5B8BSgFJqSiz6xScGz`
 - `--listen` 监听地址，可以指定多次，比如：` --listen /ip4/127.0.0.1/tcp/4215 --listen /ip/127.0.0.1/tcp/5215/ws`
 - `rest api` 参数
   - `--apihost` 指定 `rest api` 服务的 `ip` 或 `域名`
