@@ -25,7 +25,8 @@ SDK.chain.Trx.create({
        type: "Note",
        id: "1",
        content: "hello world",
-     }
+     },
+     published: "2022-12-12T12:12:12Z",
    },
    groupId: group.groupId,
    privateKey: '...'
@@ -44,14 +45,12 @@ SDK.chain.Trx.create({
        "type": "Note",
        "id": "1",
        "content": "hello world",
-     }
+     },
+     "published": "2022-12-12T12:12:12Z",
    },
    "TrxId": "...",
    "GroupId": "...",
-   "TimeStamp": "...",
-   "Version": "1.0.0",
-   "Expired": 1672284016463,
-   "Nonce": 1,
+   "Version": "2.0.0",
    "SenderPubkey": "...",
    "SenderSign": "..."
 }
@@ -81,7 +80,8 @@ SDK.chain.Trx.create({
          mediaType: "image/jpeg"
          content: "data:image/jpeg;base64,/9j/4AA..."
        }]
-     }
+     },
+     published: "2022-12-12T12:12:12Z",
    },
    groupId: group.groupId,
    privateKey: '...'
@@ -106,14 +106,12 @@ SDK.chain.Trx.create({
          "mediaType": "image/jpeg"
          "content": "data:image/jpeg;base64,/9j/4AA..."
        }]
-     }
+     },
+     "published": "2022-12-12T12:12:12Z",
    },
    "TrxId": "...",
    "GroupId": "...",
-   "TimeStamp": "...",
-   "Version": "1.0.0",
-   "Expired": 1672284016463,
-   "Nonce": 1,
+   "Version": "2.0.0",
    "SenderPubkey": "...",
    "SenderSign": "..."
 }
@@ -136,7 +134,8 @@ SDK.chain.Trx.create({
      object : {
        type: "Note",
        id: "1",
-     }
+     },
+     published: "2022-12-12T12:12:12Z",
    },
    groupId: group.groupId,
    privateKey: '...'
@@ -154,14 +153,12 @@ SDK.chain.Trx.create({
      "object": {
        "type": "Note",
        "id": "1",
-     }
+     },
+     "published": "2022-12-12T12:12:12Z",
    },
    "TrxId": "...",
    "GroupId": "...",
-   "TimeStamp": "...",
-   "Version": "1.0.0",
-   "Expired": 1672284016463,
-   "Nonce": 1,
+   "Version": "2.0.0",
    "SenderPubkey": "...",
    "SenderSign": "..."
 }
@@ -188,7 +185,8 @@ SDK.chain.Trx.create({
      result: {
        type: "Note",
        content: "hello world (edit)",
-     }
+     },
+     published: "2022-12-12T12:12:12Z",
    },
    groupId: group.groupId,
    privateKey: '...'
@@ -210,14 +208,12 @@ SDK.chain.Trx.create({
      "result": {
        "type": "Note",
        "content": "hello world (edit)",
-     }
+     },
+     "published": "2022-12-12T12:12:12Z",
    },
    "TrxId": "...",
    "GroupId": "...",
-   "TimeStamp": "...",
-   "Version": "1.0.0",
-   "Expired": 1672284016463,
-   "Nonce": 1,
+   "Version": "2.0.0",
    "SenderPubkey": "...",
    "SenderSign": "..."
 }
@@ -240,7 +236,8 @@ SDK.chain.Trx.create({
     object : {
       type: "Note",
       id: "1",
-    }
+    },
+    published: "2022-12-12T12:12:12Z",
   },
   groupId: group.groupId,
   privateKey: '...'
@@ -258,14 +255,12 @@ SDK.chain.Trx.create({
     "object" : {
       "type": "Note",
       "id": "1",
-    }
+    },
+    "published": "2022-12-12T12:12:12Z",
   },
   "TrxId": "...",
   "GroupId": "...",
-  "TimeStamp": "...",
-  "Version": "1.0.0",
-  "Expired": 1672284016463,
-  "Nonce": 1,
+  "Version": "2.0.0",
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
@@ -291,7 +286,8 @@ SDK.chain.Trx.create({
         type: "Note",
         id: "1",
       }
-    }
+    },
+    published: "2022-12-12T12:12:12Z",
   },
   groupId: group.groupId,
   privateKey: '...'
@@ -312,14 +308,12 @@ SDK.chain.Trx.create({
         "type": "Note",
         "id": "1",
       }
-    }
+    },
+    "published": "2022-12-12T12:12:12Z",
   },
   "TrxId": "...",
   "GroupId": "...",
-  "TimeStamp": "...",
-  "Version": "1.0.0",
-  "Expired": 1672284016463,
-  "Nonce": 1,
+  "Version": "2.0.0",
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
@@ -342,7 +336,8 @@ SDK.chain.Trx.create({
     object : {
       type: "Note",
       id: "1",
-    }
+    },
+    published: "2022-12-12T12:12:12Z",
   },
   groupId: group.groupId,
   privateKey: '...'
@@ -360,14 +355,12 @@ SDK.chain.Trx.create({
     "object" : {
       "type": "Note",
       "id": "1",
-    }
+    },
+    "published": "2022-12-12T12:12:12Z",
   },
   "TrxId": "...",
   "GroupId": "...",
-  "TimeStamp": "...",
-  "Version": "1.0.0",
-  "Expired": 1672284016463,
-  "Nonce": 1,
+  "Version": "2.0.0",
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
@@ -393,7 +386,8 @@ SDK.chain.Trx.create({
         type: "Note",
         id: "1",
       }
-    }
+    },
+    published: "2022-12-12T12:12:12Z",
   },
   groupId: group.groupId,
   privateKey: '...'
@@ -414,14 +408,12 @@ SDK.chain.Trx.create({
         "type": "Note",
         "id": "1",
       }
-    }
+    },
+    "published": "2022-12-12T12:12:12Z",
   },
   "TrxId": "...",
   "GroupId": "...",
-  "TimeStamp": "...",
-  "Version": "1.0.0",
-  "Expired": 1672284016463,
-  "Nonce": 1,
+  "Version": "2.0.0",
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
@@ -449,7 +441,8 @@ SDK.chain.Trx.create({
         type: "Note",
         id: "1"
       }
-    }
+    },
+    published: "2022-12-12T12:12:12Z",
   },
   groupId: group.groupId,
   privateKey: '...'
@@ -472,14 +465,12 @@ SDK.chain.Trx.create({
         "type": "Note",
         "id": "1"
       }
-    }
+    },
+    "published": "2022-12-12T12:12:12Z",
   },
   "TrxId": "...",
   "GroupId": "...",
-  "TimeStamp": "...",
-  "Version": "1.0.0",
-  "Expired": 1672284016463,
-  "Nonce": 1,
+  "Version": "2.0.0",
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
@@ -511,7 +502,8 @@ SDK.chain.Trx.create({
         type: "Person",
         id: "user eth address"
       }
-    }
+    },
+    published: "2022-12-12T12:12:12Z",
   },
   groupId: group.groupId,
   privateKey: '...'
@@ -538,14 +530,12 @@ SDK.chain.Trx.create({
         "type": "Person",
         "id": "user eth address"
       }
-    }
+    },
+    "published": "2022-12-12T12:12:12Z",
   },
   "TrxId": "...",
   "GroupId": "...",
-  "TimeStamp": "...",
-  "Version": "1.0.0",
-  "Expired": 1672284016463,
-  "Nonce": 1,
+  "Version": "2.0.0",
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
@@ -568,7 +558,8 @@ SDK.chain.Trx.create({
     object : {
       type: "Person",
       id: "user eth address",
-    }
+    },
+    published: "2022-12-12T12:12:12Z",
   },
   groupId: group.groupId,
   privateKey: '...'
@@ -586,14 +577,12 @@ SDK.chain.Trx.create({
     "object" : {
       "type": "Person",
       "id": "user eth address",
-    }
+    },
+    "published": "2022-12-12T12:12:12Z",
   },
   "TrxId": "...",
   "GroupId": "...",
-  "TimeStamp": "...",
-  "Version": "1.0.0",
-  "Expired": 1672284016463,
-  "Nonce": 1,
+  "Version": "2.0.0",
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
@@ -619,7 +608,8 @@ SDK.chain.Trx.create({
         type: "Person",
         id: "user eth address",
       }
-    }
+    },
+    published: "2022-12-12T12:12:12Z",
   },
   groupId: group.groupId,
   privateKey: '...'
@@ -640,14 +630,12 @@ SDK.chain.Trx.create({
         "type": "Person",
         "id": "user eth address",
       }
-    }
+    },
+    "published": "2022-12-12T12:12:12Z",
   },
   "TrxId": "...",
   "GroupId": "...",
-  "TimeStamp": "...",
-  "Version": "1.0.0",
-  "Expired": 1672284016463,
-  "Nonce": 1,
+  "Version": "2.0.0",
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
@@ -670,7 +658,8 @@ SDK.chain.Trx.create({
     object : {
       type: "Person",
       id: "user eth address",
-    }
+    },
+    published: "2022-12-12T12:12:12Z",
   },
   groupId: group.groupId,
   privateKey: '...'
@@ -688,14 +677,12 @@ SDK.chain.Trx.create({
     "object" : {
       "type": "Person",
       "id": "user eth address",
-    }
+    },
+    "published": "2022-12-12T12:12:12Z",
   },
   "TrxId": "...",
   "GroupId": "...",
-  "TimeStamp": "...",
-  "Version": "1.0.0",
-  "Expired": 1672284016463,
-  "Nonce": 1,
+  "Version": "2.0.0",
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
@@ -721,7 +708,8 @@ SDK.chain.Trx.create({
         type: "Person",
         id: "user eth address",
       }
-    }
+    },
+    published: "2022-12-12T12:12:12Z",
   },
   groupId: group.groupId,
   privateKey: '...'
@@ -742,14 +730,12 @@ SDK.chain.Trx.create({
         "type": "Person",
         "id": "user eth address",
       }
-    }
+    },
+    "published": "2022-12-12T12:12:12Z",
   },
   "TrxId": "...",
   "GroupId": "...",
-  "TimeStamp": "...",
-  "Version": "1.0.0",
-  "Expired": 1672284016463,
-  "Nonce": 1,
+  "Version": "2.0.0",
   "SenderPubkey": "...",
   "SenderSign": "..."
 }
