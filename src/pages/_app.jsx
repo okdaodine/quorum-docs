@@ -13,7 +13,6 @@ const navigationCN = [
     title: '开始',
     links: [
       { title: '介绍', href: '/' },
-      { title: '快速开始', href: '/docs/quick-start' }
     ],
   },
   {
@@ -41,7 +40,6 @@ const navigationEN = [
     title: 'Start',
     links: [
       { title: 'Introduction', href: '/docs/en' },
-      { title: 'Quick start', href: '/docs/en/quick-start' }
     ],
   },
   {

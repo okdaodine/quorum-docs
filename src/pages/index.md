@@ -112,8 +112,6 @@ Quorum official website [https://rumsystem.net](https://rumsystem.net)
 3. Ruby SDK: [https://github.com/an-lee/quorum_sdk](https://github.com/an-lee/quorum_sdk)
 4. Python SDK: [quorum-lightnode](https://pypi.org/project/quorum-lightnode/)
 
-如果你想知道如何开发 Quorum SDK，查看 [如何编写一个 Quorum SDK ?](/docs/build-sdk)
-
 ## 开源
 
 Quorum 是开源的，您可以到这里查看源代码 [https://github.com/rumsystem/quorum](https://github.com/rumsystem/quorum)
