@@ -32,6 +32,11 @@ const navigationCN = [
     title: '内容',
     links: [{ title: '格式说明和例子', href: '/docs/data-format-and-examples' }],
   },
+  {
+    expand: true,
+    title: '种子网络',
+    links: [{ title: '公开的种子网络', href: '/docs/public-seeds' }],
+  },
 ];
 
 const navigationEN = [
@@ -58,6 +63,11 @@ const navigationEN = [
     expand: true,
     title: 'Data',
     links: [{ title: 'Format and examples', href: '/docs/en/data-format-and-examples' }],
+  },
+  {
+    expand: true,
+    title: 'SeedNet',
+    links: [{ title: 'Public SeedNets', href: '/docs/en/public-seeds' }],
   },
 ];
 
