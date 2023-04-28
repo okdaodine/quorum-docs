@@ -479,6 +479,65 @@ SDK.chain.Trx.create({
 
 Refer to: [ActivityPub#Create](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-create), [ActivityPub#inreplyto](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-inreplyto)
 
+## Retweet
+
+{% tabs %}
+
+{% tab label="Javascript" %}
+
+```javascript
+const SDK = require('rum-sdk-nodejs')
+const group = SDK.cache.Group.add('rum://...')
+SDK.chain.Trx.create({
+  data: {
+    type: 'Create',
+    object: {
+      type: 'Note',
+      id: '2',
+      content: 'Awesome 👇👇',
+      object: {
+        type: 'Note',
+        id: '1',
+        content: 'hello world',
+      },
+    },
+    published: "2022-12-12T12:12:12Z",
+  },
+  groupId: group.groupId,
+  privateKey: '...',
+})
+```
+
+{% /tab %}
+
+{% /tabs %}
+
+```json
+// Data from the chain
+{
+  "Data": {
+    "type": "Create",
+    "object": {
+      "type": "Note",
+      "id": "2",
+      "content": "Awesome 👇👇",
+      "object": {
+        "type": "Note",
+        "id": "1",
+        "content": "hello world",
+      },
+    },
+    "published": "2022-12-12T12:12:12Z",
+  },
+  "TrxId": "...",
+  "GroupId": "...",
+  "Version": "2.0.0",
+  "TimeStamp" "1680526868853218300",
+  "SenderPubkey": "...",
+  "SenderSign": "..."
+}
+```
+
 ## Profile
 
 {% tabs %}
