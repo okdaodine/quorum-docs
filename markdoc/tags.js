@@ -2,6 +2,7 @@ import { Tag } from '@markdoc/markdoc';
 import { Callout } from '@/components/Callout'
 import { Tabs } from '@/components/Tabs'
 import { Tab } from '@/components/Tab'
+import { Seed } from '@/components/Seed';
 
 const tags = {
   callout: {
@@ -35,7 +36,15 @@ const tags = {
   
       return new Tag(this.render, { labels }, node.transformChildren(config));
     }
-  }
+  },
+  seed: {
+    render: Seed,
+    attributes: {
+      seed: {
+        type: String
+      }
+    }
+  },
 }
 
 export default tags
