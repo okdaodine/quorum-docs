@@ -79,7 +79,10 @@ SDK.chain.Trx.create({
          name: "blue sky",
          mediaType: "image/jpeg"
          content: "data:image/jpeg;base64,/9j/4AA..."
-       }]
+       }, {
+        type: "Image",
+        url: "https://example.org/cat.png"
+      }]
      },
      published: "2022-12-12T12:12:12Z",
    },
@@ -105,7 +108,10 @@ SDK.chain.Trx.create({
          "name": "blue sky",
          "mediaType": "image/jpeg"
          "content": "data:image/jpeg;base64,/9j/4AA..."
-       }]
+       }, {
+        "type": "Image",
+        "url": "https://example.org/cat.png"
+      }]
      },
      "published": "2022-12-12T12:12:12Z",
    },
